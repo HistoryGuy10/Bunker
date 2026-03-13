@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Unit
+  - Fortifications
   layers:
   - Default
   - TransparentFX
@@ -12,7 +13,7 @@ TagManager:
   - Unit
   - Water
   - UI
-  - 
+  - Terrain
   - 
   - 
   - 
