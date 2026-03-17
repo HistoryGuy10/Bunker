@@ -101,3 +101,7 @@ ProjectBunker/Temp
 ProjectBunker/Library
 ProjectBunker/UserSettings
 ProjectBunker/.vsconfig
+ProjectBunker/.vscode/extensions.json
+ProjectBunker/.vscode/launch.json
+ProjectBunker/.vscode/settings.json
+ProjectBunker/ProjectBunker.slnx
