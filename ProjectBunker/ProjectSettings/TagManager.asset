@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Unit
   - Fortifications
+  - Low
+  - Middle
+  - High
+  - Road
   layers:
   - Default
   - TransparentFX
@@ -14,7 +18,7 @@ TagManager:
   - Water
   - UI
   - Terrain
-  - 
+  - Ground
   - 
   - 
   - 
