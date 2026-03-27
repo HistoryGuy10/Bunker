@@ -53,6 +53,9 @@ TagManager:
   - name: Defenses
     uniqueID: 3717119159
     locked: 0
+  - name: Supply
+    uniqueID: 1747858805
+    locked: 0
   - name: Unit
     uniqueID: 171575165
     locked: 0
