@@ -3716,6 +3716,7 @@ MonoBehaviour:
       UnityEngine.TilemapModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"marshGroundTile","value":{"$content":9,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.Tilemaps.Tile,
       UnityEngine.TilemapModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"defenseBonus","value":{"$content":3.5,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"alert","value":{"$content":10,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"cam","value":{"$content":11,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences:
     - {fileID: 2070496609}
@@ -3729,6 +3730,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 4127905dbd48bcd4c8e4de941ee3ae6f, type: 2}
     - {fileID: 11400000, guid: 556abd7c7bfe9fc49a6643608b8dacdd, type: 2}
     - {fileID: 636462827}
+    - {fileID: 1226804305}
 --- !u!4 &1237837440
 Transform:
   m_ObjectHideFlags: 0
@@ -650181,44 +650183,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 124116690715571936, guid: e6d7e7498f600934a9006066a7c8121e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 124116690715571936, guid: e6d7e7498f600934a9006066a7c8121e, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 124116690715571936, guid: e6d7e7498f600934a9006066a7c8121e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 124116690715571936, guid: e6d7e7498f600934a9006066a7c8121e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 305839399060218022, guid: e6d7e7498f600934a9006066a7c8121e, type: 3}
       propertyPath: m_Name
       value: BritishForcesCannons
       objectReference: {fileID: 0}
     - target: {fileID: 788542874948160978, guid: e6d7e7498f600934a9006066a7c8121e, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 908159543673749356, guid: e6d7e7498f600934a9006066a7c8121e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 908159543673749356, guid: e6d7e7498f600934a9006066a7c8121e, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 908159543673749356, guid: e6d7e7498f600934a9006066a7c8121e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 908159543673749356, guid: e6d7e7498f600934a9006066a7c8121e, type: 3}
-      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1491728796454676290, guid: e6d7e7498f600934a9006066a7c8121e, type: 3}
@@ -650313,10 +650283,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4290997986433505264, guid: e6d7e7498f600934a9006066a7c8121e, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4460734295190250830, guid: e6d7e7498f600934a9006066a7c8121e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -650402,42 +650368,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7653072717856795850, guid: e6d7e7498f600934a9006066a7c8121e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8222706719600243940, guid: e6d7e7498f600934a9006066a7c8121e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8222706719600243940, guid: e6d7e7498f600934a9006066a7c8121e, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8222706719600243940, guid: e6d7e7498f600934a9006066a7c8121e, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8222706719600243940, guid: e6d7e7498f600934a9006066a7c8121e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 137
-      objectReference: {fileID: 0}
-    - target: {fileID: 8222706719600243940, guid: e6d7e7498f600934a9006066a7c8121e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -39.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317687485871911298, guid: e6d7e7498f600934a9006066a7c8121e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317687485871911298, guid: e6d7e7498f600934a9006066a7c8121e, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317687485871911298, guid: e6d7e7498f600934a9006066a7c8121e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317687485871911298, guid: e6d7e7498f600934a9006066a7c8121e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
