@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: df9f50378f8bc21479eae04aee6bcda6
+guid: d07d6e8a64814c640b690afbefbbbeea
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4296193443984631328
-    second: Bush_0
-  - first:
-      213: -2770932246066905560
-    second: Bush_1
-  - first:
-      213: -8304077115233230222
-    second: Bush_2
+      213: 6034261343476106042
+    second: Colonial Flag_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -119,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bush_0
+      name: Colonial Flag_0
       rect:
         serializedVersion: 2
-        x: 287
-        y: 51
-        width: 451
-        height: 319
+        x: 107
+        y: 17
+        width: 886
+        height: 960
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,52 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 026e013dc252f9b30800000000000000
-      internalID: 4296193443984631328
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bush_1
-      rect:
-        serializedVersion: 2
-        x: 379
-        y: 52
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 82eb180adcbab89d0800000000000000
-      internalID: -2770932246066905560
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bush_2
-      rect:
-        serializedVersion: 2
-        x: 493
-        y: 55
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 272a21f4cddf1cc80800000000000000
-      internalID: -8304077115233230222
+      spriteID: a33c3c398b00eb350800000000000000
+      internalID: 6034261343476106042
       vertices: []
       indices: 
       edges: []
@@ -198,9 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Bush_0: 4296193443984631328
-      Bush_1: -2770932246066905560
-      Bush_2: -8304077115233230222
+      Colonial Flag_0: 6034261343476106042
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
