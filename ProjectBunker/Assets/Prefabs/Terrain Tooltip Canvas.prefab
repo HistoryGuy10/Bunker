@@ -195,6 +195,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TerrainToolTip
       objectReference: {fileID: 0}
+    - target: {fileID: 7903381222694900216, guid: 50542092fbc81cf41a4ce507285d20cc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
