@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 703c43ff23fc1e443afefd658a54c14f
+guid: 8a693a2613e85214ca4ad3698aa66a04
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8074835663468710166
-    second: Resupply_Btn_0
+      213: 7461178291222733561
+    second: Actions_BG 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Resupply_Btn_0
+      name: Actions_BG 1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 4
-        width: 104
-        height: 117
+        y: 0
+        width: 435
+        height: 311
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 61945bce0449f0070800000000000000
-      internalID: 8074835663468710166
+      spriteID: 9f2ef26ff1e6b8760800000000000000
+      internalID: 7461178291222733561
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Resupply_Btn_0: 8074835663468710166
+      Actions_BG 1_0: 7461178291222733561
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
