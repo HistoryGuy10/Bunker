@@ -90,6 +90,8 @@ public class GetUnits : MonoBehaviour
 
                 corpse.GetComponent<SpriteRenderer>().color = color;
                 corpse.transform.eulerAngles = new Vector3(0f, 0f, UnityEngine.Random.Range(-corpseTiltAmount, corpseTiltAmount));
+
+                TheDead.AddParent(corpse);
             }
 
             troop.SetActive(false);
