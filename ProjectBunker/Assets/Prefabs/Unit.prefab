@@ -1921,16 +1921,13 @@ MonoBehaviour:
   baseDisorderAmount: 0.08
   maxDisorderOffsetX: 0.25
   maxDisorderOffsetY: 0.05
-  idleMoveAmountX: 0.025
-  idleMoveAmountY: 0.01
-  idleSpeedMin: 0.4
-  idleSpeedMax: 0.8
-  settleSmoothTime: 0.5
+  calmRetargetIntervalMin: 1
+  calmRetargetIntervalMax: 3
+  panicRetargetIntervalMin: 0.5
+  panicRetargetIntervalMax: 0.8
   currentMorale: 100
   moraleSmoothingSpeed: 8
   maxExtraDisorderFromPanic: 0.35
-  maxIdleMultiplierFromPanic: 100
-  maxIdleSpeedMultiplierFromPanic: 0.0005
   panicBuildSpeed: 0.5
   panicRecoverSpeed: 10
   moraleToPanicCurve:
@@ -1978,6 +1975,7 @@ MonoBehaviour:
   readMoraleFromScriptMachine: 0
   moraleVariableObject: {fileID: 0}
   moraleVariableName: Morale
+  moralePollInterval: 0.1
   defaultColorA: {r: 1, g: 0, b: 0, a: 1}
   defaultColorB: {r: 1, g: 0, b: 0, a: 1}
   defaultFactionDisorderAmount: 0.08
