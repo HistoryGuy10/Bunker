@@ -109,3 +109,14 @@ Terrain Test/Library
 Terrain Test/ProjectSettings
 Terrain Test/UserSettings
 Build (3).zip
+
+# Unity generated / build output
+BuildWin/
+BuildWin.zip
+[Bb]uild/
+[Bb]uilds/
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Ll]ogs/
+.vs/
