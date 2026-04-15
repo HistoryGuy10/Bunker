@@ -13,15 +13,23 @@ public class GeneralGage : MonoBehaviour
     [Header("Timeline")]
     [SerializeField] private List<TimedSequenceEvent> events = new List<TimedSequenceEvent>();
 
+    [Header("Timeline End")]
+    [SerializeField, Min(0f)] private float endTime = 0f;
+    [SerializeField] private UnityEvent onTimelineEnded;
+
     public float ElapsedTime => elapsedTime;
+    public float EndTime => endTime;
     public bool IsPlaying => isPlaying;
 
     public float elapsedTime;
     private int nextEventIndex;
     private bool isPlaying;
+    private bool timelineEndInvoked;
 
     // Runtime-only sorted view of the authored events
     private readonly List<RuntimeTimedEvent> runtimeEvents = new List<RuntimeTimedEvent>();
+
+    private bool HasExplicitEndTime => endTime > 0f;
 
     private void Start()
     {
@@ -39,23 +47,40 @@ public class GeneralGage : MonoBehaviour
 
         elapsedTime += useUnscaledTime ? Time.unscaledDeltaTime : Time.deltaTime;
 
-        while (nextEventIndex < runtimeEvents.Count &&
-               elapsedTime >= runtimeEvents[nextEventIndex].timedEvent.time)
+        while (nextEventIndex < runtimeEvents.Count)
         {
-            TriggerEvent(runtimeEvents[nextEventIndex].timedEvent);
+            TimedSequenceEvent nextTimedEvent = runtimeEvents[nextEventIndex].timedEvent;
+            if (nextTimedEvent == null)
+            {
+                nextEventIndex++;
+                continue;
+            }
+
+            // Do not fire events that are scheduled after the explicit timeline end.
+            if (HasExplicitEndTime && nextTimedEvent.time > endTime)
+            {
+                break;
+            }
+
+            if (elapsedTime < nextTimedEvent.time)
+            {
+                break;
+            }
+
+            TriggerEvent(nextTimedEvent);
             nextEventIndex++;
         }
 
-        if (nextEventIndex >= runtimeEvents.Count)
+        if (HasExplicitEndTime)
         {
-            if (loop)
+            if (!timelineEndInvoked && elapsedTime >= endTime)
             {
-                PlayFromBeginning();
+                FinishTimeline();
             }
-            else
-            {
-                isPlaying = false;
-            }
+        }
+        else if (nextEventIndex >= runtimeEvents.Count)
+        {
+            FinishTimeline();
         }
     }
 
@@ -65,6 +90,7 @@ public class GeneralGage : MonoBehaviour
         elapsedTime = 0f;
         nextEventIndex = 0;
         isPlaying = true;
+        timelineEndInvoked = false;
     }
 
     public void Pause()
@@ -82,12 +108,30 @@ public class GeneralGage : MonoBehaviour
         isPlaying = false;
         elapsedTime = 0f;
         nextEventIndex = 0;
+        timelineEndInvoked = false;
     }
 
     public void TriggerEventNow(int index)
     {
         if (index < 0 || index >= runtimeEvents.Count) return;
         TriggerEvent(runtimeEvents[index].timedEvent);
+    }
+
+    private void FinishTimeline()
+    {
+        if (timelineEndInvoked) return;
+
+        timelineEndInvoked = true;
+        onTimelineEnded?.Invoke();
+
+        if (loop)
+        {
+            PlayFromBeginning();
+        }
+        else
+        {
+            isPlaying = false;
+        }
     }
 
     private void TriggerEvent(TimedSequenceEvent timedEvent)
