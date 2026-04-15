@@ -1936,7 +1936,7 @@ GameObject:
   - component: {fileID: 7625419871819908260}
   - component: {fileID: 2738705811333644983}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Flag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
