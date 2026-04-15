@@ -243,8 +243,8 @@ public class GetUnits : MonoBehaviour
         float intervalMax = Mathf.Lerp(calmRetargetIntervalMax, panicRetargetIntervalMax, panic01);
         troop.nextRetargetTime = time + UnityEngine.Random.Range(intervalMin, intervalMax);
 
-        float amountX = Mathf.Lerp(calmShiftAmountX, panicShiftAmountX, panic01);
-        float amountY = Mathf.Lerp(calmShiftAmountY, panicShiftAmountY, panic01);
+        float amountX = Mathf.Lerp(calmShiftAmountX * baseDisorderAmount, panicShiftAmountX, panic01);
+        float amountY = Mathf.Lerp(calmShiftAmountY * baseDisorderAmount, panicShiftAmountY, panic01);
 
         int choiceMax = panic01 > 0.45f ? 8 : 5;
         int choice = UnityEngine.Random.Range(0, choiceMax);
