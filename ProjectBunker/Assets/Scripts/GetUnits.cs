@@ -27,6 +27,7 @@ public class GetUnits : MonoBehaviour
     [Header("Troops")]
     [SerializeField] private List<GameObject> list = new List<GameObject>();
     [SerializeField] private List<SpriteRenderer> listS = new List<SpriteRenderer>();
+    [SerializeField] private List<Shoot> shootList = new List<Shoot>();
 
     [Header("World Follow")]
     [SerializeField] private Transform targetRoot;
@@ -129,6 +130,7 @@ public class GetUnits : MonoBehaviour
         float startPanicInput = 1f - startMorale01;
         displayedPanic = Mathf.Clamp01(moraleToPanicCurve.Evaluate(startPanicInput));
 
+        ShuffleHelper.Shuffle(killOrder);
         SetColors(defaultColorA, defaultColorB);
 
         transform.parent = targetRoot.parent;
@@ -542,6 +544,17 @@ public class GetUnits : MonoBehaviour
         transform.position = targetRoot.position;
         transform.rotation = targetRoot.rotation;
         rootFollowVelocity = Vector3.zero;
+    }
+
+    public void Shoot()
+    {
+        foreach (Shoot shoot in shootList)
+        {
+            if (shoot != null)
+            {
+                shoot.ShootIt();
+            }
+        }
     }
 }
 
