@@ -8,4 +8,8 @@ public class TMPTXT : MonoBehaviour
     {
         textComponent.text = text;
     }
+    public void SetColor(Color color)
+    {
+        textComponent.color = color;
+    }
 }
