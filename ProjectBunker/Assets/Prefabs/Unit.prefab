@@ -884,6 +884,7 @@ MonoBehaviour:
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"graphic","value":{"$content":25,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"TROOP","value":{"$content":26,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"GetUnits,
       Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"ConeColllider","value":{"$content":27,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"expo","value":{"$content":28,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences:
     - {fileID: 5552753978190919450}
@@ -914,6 +915,7 @@ MonoBehaviour:
     - {fileID: 1450259628513052579}
     - {fileID: 7438486874754479233}
     - {fileID: 4231967550581334732}
+    - {fileID: 9063683916900874209}
 --- !u!114 &8104046499708222404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13486,6 +13488,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!1 &9063683916900874209 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5582052848680785659, guid: 17de1094a291e8b4ba6ff876d62f82b8, type: 3}
+  m_PrefabInstance: {fileID: 3512741728255697178}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8000145404911622998
 PrefabInstance:
   m_ObjectHideFlags: 0
