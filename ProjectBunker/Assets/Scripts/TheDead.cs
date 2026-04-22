@@ -29,4 +29,9 @@ public class TheDead : MonoBehaviour
             Destroy(child.gameObject);
         }
     }
+
+    public static int Counter()
+    {
+        return Instance.transform.childCount;
+    }
 }
