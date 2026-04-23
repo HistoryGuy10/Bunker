@@ -14,8 +14,15 @@ public class GetUnits : MonoBehaviour
         public SpriteRenderer renderer;
 
         public Vector3 baseLocalPosition;
+        public Quaternion baseLocalRotation;
+
         public Vector3 microOffsetTarget;
         public Vector3 velocity;
+
+        public Vector3 bounceOffset;
+        public Vector3 bounceOffsetVelocity;
+
+        public float currentTurnAngle;
 
         public Vector2 disorderDirection;
         public Vector2 sortPosition;
@@ -107,6 +114,19 @@ public class GetUnits : MonoBehaviour
 
     private Vector3 rootFollowVelocity;
 
+    [Header("Per-Troop Turn")]
+    [SerializeField] private float maxTroopTurnAngle = 10f;
+    [SerializeField] private float troopTurnSharpness = 12f;
+    [SerializeField] private float turnFromHorizontalVelocity = 35f;
+
+    [Header("Per-Troop Bounce")]
+    [SerializeField] private Vector2 localBounceBackDirection = Vector2.down;
+    [SerializeField] private float bounceReturnSmoothTime = 0.10f;
+    [SerializeField, Range(0f, 1f)] private float bounceVariation = 0.15f;
+    [SerializeField] private float bounceSideScatter = 0.015f;
+
+    private float visualNeutralZ;
+
     private void Awake()
     {
         if (formationSpaceRoot == null)
@@ -177,6 +197,7 @@ public class GetUnits : MonoBehaviour
             transform.position = targetRoot.position;
             transform.rotation = targetRoot.rotation;
             rootFollowVelocity = Vector3.zero;
+            visualNeutralZ = transform.eulerAngles.z;
             return;
         }
 
@@ -214,13 +235,24 @@ public class GetUnits : MonoBehaviour
                 RetargetMicroOffset(troop, panic01, time);
             }
 
+            troop.bounceOffset = Vector3.SmoothDamp(
+                troop.bounceOffset,
+                Vector3.zero,
+                ref troop.bounceOffsetVelocity,
+                bounceReturnSmoothTime
+            );
+
             Vector3 disorderOffset = new Vector3(
                 troop.disorderDirection.x * maxDisorderOffsetX * totalDisorder,
                 troop.disorderDirection.y * maxDisorderOffsetY * totalDisorder,
                 0f
             );
 
-            Vector3 targetLocal = troop.baseLocalPosition + disorderOffset + troop.microOffsetTarget;
+            Vector3 targetLocal =
+                troop.baseLocalPosition +
+                disorderOffset +
+                troop.microOffsetTarget +
+                troop.bounceOffset;
 
             float actualSmoothTime = Mathf.Lerp(
                 troopMoveSmoothTime,
@@ -234,6 +266,49 @@ public class GetUnits : MonoBehaviour
                 ref troop.velocity,
                 actualSmoothTime
             );
+
+            float targetTurnAngle = Mathf.Clamp(
+                -troop.velocity.x * turnFromHorizontalVelocity,
+                -maxTroopTurnAngle,
+                maxTroopTurnAngle
+            );
+
+            troop.currentTurnAngle = Mathf.Lerp(
+                troop.currentTurnAngle,
+                targetTurnAngle,
+                1f - Mathf.Exp(-troopTurnSharpness * Time.deltaTime)
+            );
+
+            troop.transform.localRotation =
+                troop.baseLocalRotation *
+                Quaternion.Euler(0f, 0f, troop.currentTurnAngle);
+        }
+    }
+
+    public void BounceBack(float distance)
+    {
+        Vector2 backDir = localBounceBackDirection.sqrMagnitude > 0.0001f
+            ? localBounceBackDirection.normalized
+            : Vector2.down;
+
+        Vector2 sideDir = new Vector2(-backDir.y, backDir.x);
+
+        for (int i = 0; i < troopStates.Count; i++)
+        {
+            TroopState troop = troopStates[i];
+
+            if (troop.gameObject == null) continue;
+            if (!troop.gameObject.activeSelf) continue;
+
+            float variation = 1f + UnityEngine.Random.Range(-bounceVariation, bounceVariation);
+            float sideScatter = UnityEngine.Random.Range(-bounceSideScatter, bounceSideScatter);
+
+            Vector2 finalOffset2D =
+                (backDir * distance * variation) +
+                (sideDir * sideScatter);
+
+            troop.bounceOffset += new Vector3(finalOffset2D.x, finalOffset2D.y, 0f);
+            troop.bounceOffsetVelocity = Vector3.zero;
         }
     }
 
@@ -333,6 +408,10 @@ public class GetUnits : MonoBehaviour
             troop.parent = troop.transform.parent;
             troop.renderer = troopObject.GetComponent<SpriteRenderer>();
             troop.baseLocalPosition = troop.transform.localPosition;
+            troop.baseLocalRotation = troop.transform.localRotation;
+            troop.bounceOffset = Vector3.zero;
+            troop.bounceOffsetVelocity = Vector3.zero;
+            troop.currentTurnAngle = 0f;
             troop.microOffsetTarget = Vector3.zero;
             troop.velocity = Vector3.zero;
             troop.responseScale = UnityEngine.Random.Range(0.92f, 1.08f);

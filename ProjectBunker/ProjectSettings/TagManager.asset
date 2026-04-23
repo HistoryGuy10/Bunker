@@ -59,6 +59,9 @@ TagManager:
   - name: Unit
     uniqueID: 171575165
     locked: 0
+  - name: Fire
+    uniqueID: 58889783
+    locked: 0
   - name: Veggies
     uniqueID: 2308448531
     locked: 0
