@@ -120,7 +120,7 @@ public class GetUnits : MonoBehaviour
     [SerializeField] private float turnFromHorizontalVelocity = 35f;
 
     [Header("Per-Troop Bounce")]
-    [SerializeField] private Vector2 localBounceBackDirection = Vector2.down;
+    [SerializeField] private Vector2 localBounceBackDirection = Vector2.right;
     [SerializeField] private float bounceReturnSmoothTime = 0.10f;
     [SerializeField, Range(0f, 1f)] private float bounceVariation = 0.15f;
     [SerializeField] private float bounceSideScatter = 0.015f;

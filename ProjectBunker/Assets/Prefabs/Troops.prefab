@@ -471,6 +471,13 @@ MonoBehaviour:
   defaultColorB: {r: 1, g: 0, b: 0, a: 1}
   defaultFactionDisorderAmount: 0.08
   defaultMorale: 100
+  maxTroopTurnAngle: 10
+  troopTurnSharpness: 12
+  turnFromHorizontalVelocity: 35
+  localBounceBackDirection: {x: -1, y: 0}
+  bounceReturnSmoothTime: 0.1
+  bounceVariation: 0.15
+  bounceSideScatter: 0.015
 --- !u!1001 &17089441532668987
 PrefabInstance:
   m_ObjectHideFlags: 0
