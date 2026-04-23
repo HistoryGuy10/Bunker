@@ -31,6 +31,7 @@ public class GetUnits : MonoBehaviour
         public float responseScale;
     }
 
+    [SerializeField] private CasualtyVoiceBurstPlayer casualtyVoices;
     [Header("Troops")]
     [SerializeField] private List<GameObject> list = new List<GameObject>();
     [SerializeField] private List<SpriteRenderer> listS = new List<SpriteRenderer>();
@@ -553,6 +554,8 @@ public class GetUnits : MonoBehaviour
     private void KillTroopsInternal(int amount)
     {
         if (amount <= 0) return;
+
+        casualtyVoices.PlayHitVoicesFromIntensity(amount);
 
         int killedNow = 0;
 
